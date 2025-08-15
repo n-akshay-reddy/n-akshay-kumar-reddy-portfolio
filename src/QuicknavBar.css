@@ -1,0 +1,67 @@
+.social-bar {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 10px;
+  border-radius: 16px;
+  display: flex;
+  gap: 25px;
+
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  z-index: 9999;
+
+  /* allow the enlarged icon to spill outside the rounded box */
+  overflow: visible;
+}
+
+.social-bar .icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate; /* its own stacking context so z-index works cleanly */
+}
+
+.social-bar .icon img {
+  width: 26px;
+  height: 26px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: #1a1a1a; /* slightly lighter than the bar */
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  will-change: transform;
+  position: relative;
+  z-index: 1;
+}
+
+/* when JS adds .is-active to the icon */
+.social-bar .icon.is-active img {
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45));
+}
+
+.icon .tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 2rem;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 0.3rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 3;
+}
+
+.icon:hover .tooltip { opacity: 1; }
+
+/* optional: theme overrides */
+body.light-mode .social-bar { background-color: #fbfcfd; }
+body.dark-mode  .social-bar { background-color: #0e0e0e; }
+body.dark-mode  .social-bar .icon img { background-color: #202020; }

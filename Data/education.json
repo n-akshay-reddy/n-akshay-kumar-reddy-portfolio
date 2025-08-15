@@ -1,0 +1,235 @@
+{
+  "education": [
+    {
+      "level": "school",
+      "degree": "High School/ 10th Grade",
+      "board": "CBSE", 
+      "institution": {
+        "name": "Kendriya Vidyalaya No.2 Uppal",
+        "location": {
+          "city": "Hyderabad",
+          "state": "Telangana",
+          "country": "India"
+        }
+      },
+      "duration": {
+        "startYear": "2009",
+        "endYear": "2019",
+        "yearOfPassing": "2019"
+      },
+      "performance": {
+        "type": "percentage", // or "cgpa"
+        "value": "84.8",
+        "maxValue": "100" // 100 for percentage, 10 for CGPA
+      },
+      "fieldOfStudy": "General Education",
+      "subjects": [
+        "Mathematics",
+        "Science",
+        "English",
+        "Hindi",
+        "Social Studies"
+      ],
+      "skills": [
+        "Basic Mathematics",
+        "Scientific Thinking",
+        "English Communication",
+        "Time Management",
+        "Analytical Skills"
+      ],
+      "achievements": [
+        "School Topper in Mathematics",
+        "Captain of Cricket Team"
+      ]
+    },
+    {
+      "level": "intermediate",
+      "degree": "Intermediate / 12th Grade / +2",
+      "board": "CBSE",
+      "stream": "Science", // "Science", "Commerce", "Arts"
+      "institution": {
+        "name": "XYZ Senior Secondary School",
+        "location": {
+          "city": "New Delhi",
+          "state": "Delhi",
+          "country": "India"
+        }
+      },
+      "duration": {
+        "startYear": "2018",
+        "endYear": "2020",
+        "yearOfPassing": "2020"
+      },
+      "performance": {
+        "type": "percentage",
+        "value": "88.2",
+        "maxValue": "100"
+      },
+      "fieldOfStudy": "Science (PCM)", // Physics, Chemistry, Mathematics
+      "subjects": [
+        "Physics",
+        "Chemistry",
+        "Mathematics",
+        "English",
+        "Physical Education"
+      ],
+      "skills": [
+        "Advanced Mathematics",
+        "Physics Problem Solving",
+        "Chemistry Laboratory Skills",
+        "Logical Reasoning",
+        "Research Skills",
+        "Technical Writing"
+      ],
+      "achievements": [
+        "District Level Science Olympiad Winner",
+        "Top 5% in JEE Mains Mock Tests"
+      ]
+    },
+    {
+      "level": "graduation",
+      "degree": "Bachelor of Technology (B.Tech)",
+      "specialization": "Computer Science and Engineering",
+      "institution": {
+        "name": "Indian Institute of Technology Delhi",
+        "shortName": "IIT Delhi",
+        "location": {
+          "city": "New Delhi",
+          "state": "Delhi",
+          "country": "India"
+        },
+        "type": "Government", // "Government", "Private", "Autonomous"
+        "accreditation": "NAAC A++"
+      },
+      "duration": {
+        "startYear": "2020",
+        "endYear": "2024",
+        "yearOfPassing": "2024",
+        "totalDuration": "4 years"
+      },
+      "performance": {
+        "type": "cgpa",
+        "value": "8.7",
+        "maxValue": "10.0",
+        "percentageEquivalent": "87%",
+        "division": "First Division"
+      },
+      "fieldOfStudy": "Computer Science and Engineering",
+      "majorCourses": [
+        "Data Structures and Algorithms",
+        "Object-Oriented Programming",
+        "Database Management Systems",
+        "Computer Networks",
+        "Operating Systems",
+        "Software Engineering",
+        "Machine Learning",
+        "Web Development",
+        "Computer Graphics",
+        "Artificial Intelligence"
+      ],
+      "electiveCourses": [
+        "Cloud Computing",
+        "Cybersecurity",
+        "Mobile App Development",
+        "Blockchain Technology"
+      ],
+      "skills": [
+        "Programming Languages (Java, Python, C++, JavaScript)",
+        "Web Development (HTML, CSS, React, Node.js)",
+        "Database Management (MySQL, MongoDB)",
+        "Data Structures and Algorithms",
+        "Object-Oriented Design",
+        "Software Development Life Cycle",
+        "Version Control (Git)",
+        "Problem Solving",
+        "System Design",
+        "Machine Learning Basics",
+        "API Development",
+        "Testing and Debugging"
+      ],
+      "projects": [
+        {
+          "title": "E-commerce Web Application",
+          "description": "Full-stack web application with user authentication and payment integration",
+          "technologies": ["React", "Node.js", "MongoDB", "Express"],
+          "duration": "6 months"
+        },
+        {
+          "title": "Machine Learning Stock Predictor",
+          "description": "Stock price prediction system using LSTM neural networks",
+          "technologies": ["Python", "TensorFlow", "Pandas", "NumPy"],
+          "duration": "4 months"
+        }
+      ],
+      "achievements": [
+        "Dean's List for 3 consecutive semesters",
+        "Winner of Inter-College Coding Competition 2023",
+        "Published research paper in IEEE conference",
+        "President of Computer Science Society"
+      ],
+      "finalYearProject": {
+        "title": "AI-Powered Code Review System",
+        "description": "Automated code review system using natural language processing",
+        "technologies": ["Python", "NLP", "Machine Learning", "Django"],
+        "guide": "Dr. Rajesh Kumar",
+        "grade": "A+"
+      }
+    }
+  ],
+  "additionalEducation": [
+    {
+      "type": "certification",
+      "title": "Full Stack Web Development Certification",
+      "provider": "Coursera - University of Michigan",
+      "duration": {
+        "startDate": "2023-06",
+        "endDate": "2023-09",
+        "totalDuration": "3 months"
+      },
+      "skills": [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "RESTful APIs"
+      ],
+      "certificateUrl": "https://coursera.org/certificate/xyz123",
+      "grade": "98%"
+    },
+    {
+      "type": "workshop",
+      "title": "Machine Learning Workshop",
+      "provider": "Google Developers",
+      "duration": {
+        "startDate": "2023-03-15",
+        "endDate": "2023-03-17",
+        "totalDuration": "3 days"
+      },
+      "skills": [
+        "TensorFlow",
+        "Keras",
+        "Deep Learning",
+        "Neural Networks"
+      ]
+    }
+  ],
+  "educationSummary": {
+    "totalYearsOfEducation": 16,
+    "highestQualification": "Bachelor of Technology",
+    "overallAcademicPerformance": "Excellent",
+    "keyStrengths": [
+      "Strong analytical and problem-solving skills",
+      "Consistent academic performance",
+      "Leadership experience",
+      "Research and development experience"
+    ],
+    "coreCompetencies": [
+      "Software Development",
+      "Data Structures and Algorithms",
+      "Web Development",
+      "Database Management",
+      "Machine Learning",
+      "System Design"
+    ]
+  }
+}

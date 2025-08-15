@@ -1,0 +1,28 @@
+{
+  "iconsData": [
+    {
+      "href": "https://www.linkedin.com/in/n-akshay-kumar-reddy/",
+      "img": "quick-bar/linkedin.svg",
+      "alt": "LinkedIn",
+      "tooltip": "LinkedIn"
+    },
+    {
+      "href": "https://github.com/n-akshay-reddy",
+      "img": "quick-bar/github-logo.svg",
+      "alt": "GitHub",
+      "tooltip": "GitHub"
+    },
+    {
+      "href": "https://www.instagram.com/n_akshay_reddy/",
+      "img": "quick-bar/instagram.svg",
+      "alt": "Instagram",
+      "tooltip": "Instagram"
+    },
+    {
+      "href": "https://n-akshay-reddy.github.io/resume/index.pdf",
+      "img": "quick-bar/resume.svg",
+      "alt": "Resume",
+      "tooltip": "Resume"
+    }
+  ]
+}

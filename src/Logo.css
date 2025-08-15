@@ -1,0 +1,56 @@
+
+.signature-logo .angle {
+  font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  font-weight: 700;
+  opacity: 0.9;
+  transform: translateY(0.04em);
+  font-size: 0.60em;
+  letter-spacing: 0.05em;
+}
+
+.signature-logo .name {
+  font-family: "Great Vibes", "Alex Brush", "Allura", cursive;
+  font-weight: 400;
+  transform: translateY(0.03em);
+  white-space: nowrap;
+  -webkit-text-stroke: 0.3px rgba(0,0,0,0.25);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.signature-logo {
+  font-family: "Great Vibes", cursive;
+  display: flex;
+  align-items: center;
+  transition: all 0.8s ease-in-out;
+  z-index: 1000;
+  position: fixed;
+}
+
+.signature-logo.center {
+  font-size: 3rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.signature-logo.top-left {
+  font-size: 1.7rem;
+  top: 0.5rem;
+  left: 1rem;
+  transform: translate(0, 0);
+}
+
+/* Brackets */
+.signature-logo .angle {
+  font-family: "Fira Code", monospace;
+  font-weight: bold;
+  opacity: 0.9;
+  font-size: 0.6em;
+  letter-spacing: 0.05em;
+  margin: 0 0.2em;
+}
+
+.signature-logo .name {
+  -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}

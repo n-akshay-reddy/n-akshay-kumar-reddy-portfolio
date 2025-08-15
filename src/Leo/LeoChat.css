@@ -1,0 +1,390 @@
+/* ==========================================
+   CHAT WINDOW STRUCTURE - BOTTOM RIGHT
+   ========================================== */
+
+/* Chat Overlay Background - Removed for bottom-right positioning */
+.chat-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: transparent;
+  z-index: 2000;
+  pointer-events: none;
+}
+
+/* Main Chat Container - Bottom Right */
+.chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  width: 380px;
+  height: 500px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  animation: slideUpFromBottomRight 0.4s ease-out;
+  pointer-events: all;
+  border: 1px solid #e0e0e0;
+}
+
+/* ==========================================
+   CHAT HEADER STYLES
+   ========================================== */
+
+/* Chat Header Container */
+.chat-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 60px;
+}
+
+/* Small Leo Avatar in Header */
+.header-leo {
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(145deg, #f0f0f0, #d1d1d1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Small Leo Face in Header */
+.header-face {
+  width: 22px;
+  height: 16px;
+  background: #1a2332;
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Small Leo Eyes in Header */
+.header-eyes {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-eye {
+  width: 3px;
+  height: 3px;
+  background: #00d4ff;
+  border-radius: 50%;
+}
+
+/* Small Leo Smile in Header */
+.header-smile {
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 2px;
+  background: #00d4ff;
+  border-radius: 0 0 7px 7px;
+}
+
+/* Chat Title Section */
+.chat-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.chat-title h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.chat-title p {
+  margin: 2px 0 0 0;
+  opacity: 0.9;
+  font-size: 12px;
+}
+
+/* Close Button */
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background 0.2s;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.close-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ==========================================
+   CHAT MESSAGES AREA
+   ========================================== */
+
+/* Messages Container */
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 350px;
+}
+
+/* Custom Scrollbar */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Individual Message Bubble */
+.message {
+  padding: 10px 14px;
+  border-radius: 16px;
+  max-width: 80%;
+  word-wrap: break-word;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+/* Leo's Messages */
+.message.leo {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+/* User's Messages */
+.message.user {
+  background: #e3f2fd;
+  color: #333;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+/* Typing Message Style */
+.message.typing {
+  padding: 14px;
+}
+
+/* ==========================================
+   TYPING INDICATOR
+   ========================================== */
+
+.typing-indicator {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.typing-indicator span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.7);
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* ==========================================
+   CHAT INPUT AREA
+   ========================================== */
+
+/* Input Container */
+.chat-input {
+  padding: 15px;
+  background: white;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 8px;
+}
+
+/* Text Input Field */
+.chat-input input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 20px;
+  outline: none;
+  font-size: 13px;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.chat-input input:focus {
+  border-color: #667eea;
+}
+
+.chat-input input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Send Button */
+.send-btn {
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.send-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.send-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==========================================
+   CHAT ANIMATIONS
+   ========================================== */
+
+/* Chat Container Slide Up from Bottom Right */
+@keyframes slideUpFromBottomRight {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Typing Dots Animation */
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN FOR CHAT
+   ========================================== */
+
+/* Tablet and Small Desktop */
+@media (max-width: 768px) {
+  .chat-container {
+    bottom: 70px;
+    right: 25px;
+    width: 350px;
+    height: 450px;
+  }
+  
+  .chat-header {
+    padding: 12px 15px;
+  }
+  
+  .chat-messages {
+    padding: 12px;
+    max-height: 300px;
+  }
+  
+  .message {
+    max-width: 85%;
+    font-size: 13px;
+  }
+  
+  .chat-input {
+    padding: 12px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .chat-container {
+    bottom: 60px;
+    right: 15px;
+    left: 15px;
+    width: auto;
+    height: 400px;
+  }
+  
+  .chat-title h3 {
+    font-size: 14px;
+  }
+  
+  .chat-title p {
+    font-size: 11px;
+  }
+  
+  .message {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  
+  .chat-input input {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  
+  .send-btn {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+  
+  .chat-messages {
+    max-height: 250px;
+  }
+}

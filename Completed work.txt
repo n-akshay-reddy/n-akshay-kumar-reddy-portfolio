@@ -1,0 +1,13 @@
+Theme control I gave from the App.tsx, so that the theme can also be controlled AI
+
+Quick bar(bottom-centered social icon bar):-
+Bottom-centered dark floating bar
+Emoji icons that grow and float up slightly on hover and beside icons will also grow slightly and they will float up 
+
+
+nav bar:-
+home profile about skills career projects
+
+For the logo :- freepik.com
+
+For the svg icons:- icon8.com

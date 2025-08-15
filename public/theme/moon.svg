@@ -1,0 +1,19 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Moon -->
+  <path d="M130,100
+           A60,60 0 1,1 70,40
+           A45,45 0 1,0 130,100
+           Z" fill="black"></path>
+
+  <!-- Cloud with white border (stroke) -->
+  <path d="M75,120 
+           a15,15 0 0,1 30,0 
+           h10 
+           a10,10 0 0,1 0,20 
+           h-40 
+           a10,10 0 0,1 0,-20 
+           Z" fill="black" stroke="white" stroke-width="6" stroke-linejoin="round"></path>
+
+  <!-- Star -->
+  <polygon points="140,40 143,48 152,48 145,54 148,62 140,57 132,62 135,54 128,48 137,48" fill="black"></polygon>
+</svg>

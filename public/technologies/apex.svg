@@ -1,0 +1,23 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Salesforce APEX-style cloud logo (Improved SVG)</title>
+  <!-- Cloud background -->
+  <path d="M600,150
+           C500,50,300,50,250,200
+           C150,200,100,300,180,400
+           C100,500,250,650,450,600
+           C550,700,750,700,850,600
+           C1000,650,1150,500,1020,400
+           C1100,300,1000,150,850,200
+           C800,50,700,50,600,150Z" fill="#00AEEF"></path>
+
+  <!-- Main Text -->
+  <text x="600" y="380" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="130" fill="white" style="letter-spacing:-3px;">
+    salesforce
+  </text>
+
+  <!-- Sub Text -->
+  <text x="600" y="500" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="600" font-size="90" fill="white" style="letter-spacing:6px;">
+    APEX
+  </text>
+</svg>

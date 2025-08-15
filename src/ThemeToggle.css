@@ -1,0 +1,47 @@
+/* Theme toggle button styles */
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.theme-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.theme-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Spin animation */
+.spin-back {
+  animation: spinBack 0.8s ease-in-out forwards;
+}
+
+@keyframes spinBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(320deg);
+  }
+}
+
+/* Background themes */
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}

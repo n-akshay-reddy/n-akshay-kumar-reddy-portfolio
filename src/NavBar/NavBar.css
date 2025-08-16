@@ -1,0 +1,121 @@
+.nav-bar {
+  position: fixed;
+  top: 1.2rem;                 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1500;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+}
+
+.nav-list li {
+  position: relative;
+}
+
+.nav-list a,
+.drop-btn {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-color, #333);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font: inherit;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.3s ease;
+  padding: 5px 0;
+}
+
+/* Hover effect */
+.nav-list a:hover,
+.drop-btn:hover {
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #8e2de2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gradient underline effect */
+.nav-list a::after,
+.drop-btn::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #8e2de2);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav-list a:hover::after,
+.drop-btn:hover::after {
+  width: 100%;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 2.2rem;
+  left: 0;
+  background: var(--bg-color, #fff);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 0.5rem 0;
+  min-width: 160px;
+  z-index: 2000;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-menu li a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text-color, #333);
+  transition: color 0.3s, background 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #8e2de2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Active nav item - different gradient */
+.nav-list a.active,
+.drop-btn.active {
+  background: linear-gradient(90deg, #00c6ff, #0072ff); /* new gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-list a.active::after,
+.drop-btn.active::after {
+  width: 100%;
+  background: linear-gradient(90deg, #00c6ff, #0072ff); /* same as active text */
+}

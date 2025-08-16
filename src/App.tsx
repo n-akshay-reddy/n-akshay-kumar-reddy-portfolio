@@ -1,4 +1,6 @@
+// App.tsx
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import AnimatedWavyCursor from "./WavyCursor";
 import ThemeToggle from "./ThemeToggle";
 import "./App.css";
@@ -6,6 +8,7 @@ import Leo from "./Leo/Leo";
 import QuickNavBar from "./QuicknavBar";
 import SignatureLogo from "./Logo";
 import HomePage from "./HomePage/HomePage";
+import NavBar from "./NavBar/NavBar";
 
 function App() {
   const [dark, setDark] = useState(false);
@@ -13,7 +16,7 @@ function App() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowContent(true), 2800); 
+    const timer = setTimeout(() => setShowContent(true), 2800);
     return () => clearTimeout(timer);
   }, []);
 
@@ -27,7 +30,6 @@ function App() {
     }
   }, [dark]);
 
-  // Scroll detection for header shadow
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -38,9 +40,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* Navigation bar overlay */}
       <div className={`app-header ${scrolled ? "scrolled" : ""}`}>
-        {/* Logo stays fixed, positioned inside nav visually */}
         <SignatureLogo />
       </div>
 
@@ -53,11 +53,20 @@ function App() {
       {showContent && (
         <>
           <AnimatedWavyCursor />
-          {/* Theme toggle fixed at top right */}
+          <NavBar />
+
           <header style={{ position: "fixed", top: "1rem", right: "1rem", zIndex: 2000 }}>
             <ThemeToggle dark={dark} setDark={setDark} />
           </header>
-          <HomePage />
+
+          {/* ROUTES */}
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<div>About Page</div>} />
+            <Route path="/showcase" element={<div>Showcase Page</div>} />
+            <Route path="/more" element={<div>More Page</div>} />
+          </Routes>
+
           <QuickNavBar />
           <Leo />
         </>

@@ -54,7 +54,7 @@ const HomePage: React.FC = () => {
           </p>
 
           <div className="cta-buttons">
-            <button className="connect-btn">Projects</button>
+            <button className="connect-btn">Skills</button>
             <button className="resume-btn">Download Resume →</button>
           </div>
         </div>

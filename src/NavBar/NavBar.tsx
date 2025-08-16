@@ -24,31 +24,48 @@ const Chevron: React.FC<{ open: boolean }> = ({ open }) => (
 
 const NavBar: React.FC = () => {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const closeTimeout = useRef<NodeJS.Timeout | null>(null);
   const location = useLocation();
 
   const handleMouseEnter = (menu: string) => {
-    if (closeTimeout.current) clearTimeout(closeTimeout.current);
+    if (closeTimeout.current) {
+      clearTimeout(closeTimeout.current);
+      closeTimeout.current = null;
+    }
     setOpenMenu(menu);
   };
 
   const handleMouseLeave = () => {
+    if (closeTimeout.current) {
+      clearTimeout(closeTimeout.current);
+    }
     closeTimeout.current = setTimeout(() => {
       setOpenMenu(null);
-    }, 200);
+    }, 200); // delay to prevent flickering
   };
 
   const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav className="nav-bar">
-      <ul className="nav-list">
+      {/* Hamburger for mobile */}
+      <button
+        className={`hamburger ${mobileOpen ? "highlight" : ""}`}
+        onClick={() => setMobileOpen(!mobileOpen)}
+      >
+        <img src="/hamburger-menu.svg" alt="Menu" />
+      </button>
+
+      {/* Navigation */}
+      <ul className={`nav-list ${mobileOpen ? "open" : ""}`}>
         <li>
           <Link to="/" className={isActive("/") ? "active" : ""}>
             Home
           </Link>
         </li>
 
+        {/* About Dropdown */}
         <li
           className={`dropdown ${openMenu === "about" ? "open" : ""}`}
           onMouseEnter={() => handleMouseEnter("about")}
@@ -58,11 +75,7 @@ const NavBar: React.FC = () => {
             <span>About</span>
             <Chevron open={openMenu === "about"} />
           </button>
-          <ul
-            className="dropdown-menu"
-            onMouseEnter={() => handleMouseEnter("about")}
-            onMouseLeave={handleMouseLeave}
-          >
+          <ul className="dropdown-menu">
             <li>
               <Link to="/about#education">Education</Link>
             </li>
@@ -72,6 +85,7 @@ const NavBar: React.FC = () => {
           </ul>
         </li>
 
+        {/* Showcase Dropdown */}
         <li
           className={`dropdown ${openMenu === "showcase" ? "open" : ""}`}
           onMouseEnter={() => handleMouseEnter("showcase")}
@@ -81,11 +95,7 @@ const NavBar: React.FC = () => {
             <span>Showcase</span>
             <Chevron open={openMenu === "showcase"} />
           </button>
-          <ul
-            className="dropdown-menu"
-            onMouseEnter={() => handleMouseEnter("showcase")}
-            onMouseLeave={handleMouseLeave}
-          >
+          <ul className="dropdown-menu">
             <li>
               <Link to="/showcase#projects">Projects</Link>
             </li>
@@ -98,6 +108,7 @@ const NavBar: React.FC = () => {
           </ul>
         </li>
 
+        {/* More Dropdown */}
         <li
           className={`dropdown ${openMenu === "more" ? "open" : ""}`}
           onMouseEnter={() => handleMouseEnter("more")}
@@ -107,11 +118,7 @@ const NavBar: React.FC = () => {
             <span>More</span>
             <Chevron open={openMenu === "more"} />
           </button>
-          <ul
-            className="dropdown-menu"
-            onMouseEnter={() => handleMouseEnter("more")}
-            onMouseLeave={handleMouseLeave}
-          >
+          <ul className="dropdown-menu">
             <li>
               <Link to="/more#interests">Interests</Link>
             </li>

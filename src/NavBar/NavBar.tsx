@@ -53,8 +53,12 @@ const NavBar: React.FC = () => {
       <button
         className={`hamburger ${mobileOpen ? "highlight" : ""}`}
         onClick={() => setMobileOpen(!mobileOpen)}
+        aria-label={mobileOpen ? "Close menu" : "Open menu"}
       >
-        <img src="/hamburger-menu.svg" alt="Menu" />
+        <img
+          src={mobileOpen ? "/close-hamburger-menu.svg" : "/hamburger-menu.svg"}
+          alt={mobileOpen ? "Close menu" : "Open menu"}
+        />
       </button>
 
       {/* Navigation */}

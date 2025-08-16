@@ -170,15 +170,31 @@
   }
 
   .hamburger {
-    display: block;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0.5rem;
-    margin-left: auto;
-    margin-right: 5.5rem;
-    z-index: 1600;
-  }
+  display: block;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  margin-left: auto;
+  margin-right: 5.5rem;
+  z-index: 1600;
+  transition: transform 0.2s ease; /* Smooth transition */
+}
+
+    .hamburger:hover {
+    transform: scale(1.2); /* Slightly enlarge */
+    }
+
+    .hamburger img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease; /* Smooth transition for image too */
+    }
+
+    .hamburger:hover img {
+    transform: scale(1.2);
+    }
+
 }
 
 /* === Hide hamburger on desktop === */
